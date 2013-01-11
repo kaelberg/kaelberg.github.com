@@ -1,82 +1,62 @@
 <!doctype html>
 <!--Michael Frohberg-->
 <!--MIU-1301-->
-<!--01-10-2013-->
-<!--Project 1-->
+<!--1-10-2013-->
+<!--Week 1 Project-->
 <!--index.html-->
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="My MIU CRUD App" />
-		<meta name="keywords" content="mobile development, html5, Full Sail University" />
-		<meta name="robots"	content="noindex, nofollow" />
-		<meta name="viewport" content="user-scalable=yes, width=device-width" />
-		<meta name="viewport" content="target-densitydpi-device-dpi" />
-		<title>iMixr</title>
-		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile1.2.0jquery.mobile-1.2.0.min.css"/>
-        <link rel="stylesheet" href="css/my.css" />
-        <link rel="stylesheet" href="css/styles.css">       
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js">
-        </script>
-        <script src="themed.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>iMixer</title>
+		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+		<link rel="stylesheet" href="themed.css" />
+		<script src="js/json.js" type="text/javascript"></script>		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script src="themed.js"></script>
 	</head>
-	 <body>
-    
-     <div data-role="page" data-theme="d" id="page1">
-         <div data-theme="b" data-role="header">
-             <span class="ui-title">
-             </span>
-         </div>
-         <div data-role="content" style="padding: 10px">
-             <div data-role="fieldcontain">
-                 <fieldset data-role="controlgroup">
-                     <label for="searchBox">
-                     </label>
-                     <input name="" id="searchBox" placeholder="Search " value="" type="search">
-                 </fieldset>
-             </div>
-             <div style="display: inline">
-                 <img style="width: 300px; height: 100px" src="images/newlogo.png">
-             </div>
-             <div>
-                 <a href="additem.html" target="_blank" data-transition="fade">
-                     Start A New Report
-                 </a>
-             </div>
-             <ul id="browse" data-role="listview" data-divider-theme="b" data-inset="true">
-                 <li data-role="list-divider" role="heading">
-                     Browse by...
-                 </li>
-                 <li data-theme="c">
-                     <a href="additem.html" data-transition="slide">
-                         Project Title
-                     </a>
-                 </li>
-                 <li data-theme="c">
-                     <a href="additem.html" data-transition="slide">
-                         Project Type
-                     </a>
-                 </li>
-                 <li data-theme="c">
-                     <a href="additem.html" data-transition="slide">
-                         Project Date
-                     </a>
-                 </li>
-                 <li data-theme="c">
-                     <a href="additem.html" data-transition="slide">
-                         Production Company
-                     </a>
-                 </li>
-             </ul>
-         </div>
-     </div>
-     <script>
-           <script src="js/json.js" type="text/javascript"></script>
-           <script src="js/main.js" type="text/javascript"></script>
-     </script>
- </body>
-
-</html>
+	<body>
+		<!-- Trying my hand at a little jQuery mobile theming -->
+		<div data-role="page" data-theme="d" id="page1">
+			<div data-theme="b" data-role="header">
+				<span class="ui-title"></span>
+			</div>
+		<div data-role="content" style="padding: 10px">
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="searchBox"></label>
+						<input name="" id="searchBox" placeholder="Search " value="" type="search">
+					</fieldset>
+				</div>
+				<div style="display: inline">
+					<img style="width: 300px; height: 100px" src="images/newlogo.png">
+				</div>
+				<div>
+					<a href="additem.html" target="_blank" data-transition="fade">
+					Start A New Report
+					</a>
+				</div>
+				<ul id="browse" data-role="listview" data-divider-theme="b" data-inset="true">
+					<li data-role="list-divider" role="heading">Browse by...</li>
+					<li data-theme="c">
+						<a href="additem.html" data-transition="slide">Project Title</a>
+					</li>
+					<li data-theme="c">
+						<a href="additem.html" data-transition="slide">Project Type</a>
+					</li>
+					<li data-theme="c">
+						<a href="additem.html" data-transition="slide">Project Date</a>
+					</li>
+					<li data-theme="c">
+						<a href="additem.html" data-transition="slide">Production Company</a>
+					</li>
+					<li data-theme="c">
+						<a href="additem.html" data-transition="slide">Project Media</a>
+					</li>					
+				</ul>
+			</div>
+		</div>
+		
+	</body>
 </html>
