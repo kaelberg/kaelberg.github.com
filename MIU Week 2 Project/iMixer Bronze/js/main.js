@@ -1,17 +1,20 @@
-/* Michael Frohberg id 0003262761
- MDVBS VFW 1212 
-Project 4 - Forms
-iPlayDate - main.js
+/* 
+Michael Frohbeg
+MIU-1301
+1-13-2013
+Week 2 Project
+"iMixer"
+Bronze--main.js
 */
 window.addEventListener("DOMContentLoaded", function() {
-	function $(x) {
+	function ge(x) {
 		var theValue = document.getElementById(x);
 		return theValue;
 	}
 //		Build select element with options
 	function makeCats () {
 		var formTag = document.getElementsByTagName("form"),
-			 selectDiv = $("select"),
+			 selectDiv = ge("select"),
 			 makeSelect = document.createElement("select");
 			 makeSelect.setAttribute("id", "groups");
 		for(var i=0, j=samples.length; i<j; i++) {
@@ -32,8 +35,8 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 	function getCheckbox() {
-		if($("reftone").checked) {
-			refTone = $("reftone").value;														
+		if(ge("reftone").checked) {
+			refTone = ge("reftone").value;														
 		} else {
 			refTone = "None";
 		}
@@ -41,17 +44,17 @@ window.addEventListener("DOMContentLoaded", function() {
 	function toggleControls(n) {
 		switch(n) {
 			case "on":
-				$("soundReport").style.display = "none";
-				$("clear").style.display = "inline";
-				$("display").style.display = "none";
-				$("addnew").style.display = "inline";
+				ge("soundReport").style.display = "none";
+				ge("clear").style.display = "inline";
+				ge("display").style.display = "none";
+				ge("addnew").style.display = "inline";
 				break;
 			case "off":
-				$("soundReport").style.display = "block";
-				$("clear").style.display = "inline";
-				$("display").style.display = "none";
-				$("addnew").style.display = "inline";
-				$("items").style.display = "none";
+				ge("soundReport").style.display = "block";
+				ge("clear").style.display = "inline";
+				ge("display").style.display = "none";
+				ge("addnew").style.display = "inline";
+				ge("items").style.display = "none";
 				break;
 			default:
 				return false;
@@ -66,31 +69,31 @@ window.addEventListener("DOMContentLoaded", function() {
 		getRadioValue ();
 		getCheckbox();
 		var item						= {};
-			 item.groups			= ["Project Type:", $("groups").value];
-			 item.project			= ["Project Name:", $("project").value];
-			 item.production		= ["Production Company:", $("production").value];
-			 item.contact			= ["Production Contact:", $("contact").value];
-			 item.cphone			= ["Contact Phone #:", $("cPhone").value];
-			 item.mixer				= ["Sound Mixer:", $("mixer").value];
-			 item.mphone			= ["Mixer Phone #:", $("mPhone").value];
-			 item.email				= ["Mixer Email:", $("email").value];
-			 item.date				= ["Shoot Date:", $("date").value];
-			 item.media				= ["Project Media:",$("media").value];
-			 item.select			= ["Sample Rate:", $("sampleRates").value];
+			 item.groups			= ["Project Type:", ge("groups").value];
+			 item.project			= ["Project Name:", ge("project").value];
+			 item.production		= ["Production Company:", ge("production").value];
+			 item.contact			= ["Production Contact:", ge("contact").value];
+			 item.cphone			= ["Contact Phone #:", ge("cPhone").value];
+			 item.mixer				= ["Sound Mixer:", ge("mixer").value];
+			 item.mphone			= ["Mixer Phone #:", ge("mPhone").value];
+			 item.email				= ["Mixer Email:", ge("email").value];
+			 item.date				= ["Shoot Date:", ge("date").value];
+			 item.media				= ["Project Media:",ge("media").value];
+			 item.select			= ["Sample Rate:", ge("sampleRates").value];
 			 item.radios			= ["Frame Rate:", frameRate];
 			 item.box				= ["1khz Reference Tone:", refTone];
-			 item.track1			= ["Track 1:", $("track1").value];
-			 item.track2			= ["Track 2:", $("track2").value];
-			 item.track3			= ["Track 3:", $("track3").value];
-			 item.track4			= ["Track 4:", $("track4").value];
-			 item.track5			= ["Track 5:", $("track5").value];
-			 item.track6			= ["Track 6:", $("track6").value];
-			 item.track7			= ["Track 7:", $("track7").value];
-			 item.track8			= ["Track 8:", $("track8").value];
-			 item.scene				= ["Scene Number/Name:", $("scene").value];
-			 item.take				= ["Take Number/Name:", $("take").value];
-			 item.notes				= ["Scene/Take Notes:", $("notes").value];
-			 item.fader				= ["Fader Level:", $("fader").value];
+			 item.track1			= ["Track 1:", ge("track1").value];
+			 item.track2			= ["Track 2:", ge("track2").value];
+			 item.track3			= ["Track 3:", ge("track3").value];
+			 item.track4			= ["Track 4:", ge("track4").value];
+			 item.track5			= ["Track 5:", ge("track5").value];
+			 item.track6			= ["Track 6:", ge("track6").value];
+			 item.track7			= ["Track 7:", ge("track7").value];
+			 item.track8			= ["Track 8:", ge("track8").value];
+			 item.scene				= ["Scene Number/Name:", ge("scene").value];
+			 item.take				= ["Take Number/Name:", ge("take").value];
+			 item.notes				= ["Scene/Take Notes:", ge("notes").value];
+			 item.fader				= ["Fader Level:", ge("fader").value];
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Report Saved!");
 	}
@@ -111,7 +114,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		var makeList = document.createElement("ul");
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		$("items").style.display = "block";
+		ge("items").style.display = "block";
 		for(var i=0, len=localStorage.length; i<len; i++) {
 			var makeLi = document.createElement("li");
 			makeLi.setAttribute("class", "list");
@@ -147,29 +150,29 @@ window.addEventListener("DOMContentLoaded", function() {
 		var value = localStorage.getItem(this.key);
 		var item = JSON.parse(value);
 		toggleControls("off");
-		$("groups").value = item.groups[1];
-		$("project").value = item.project[1];
-		$("production").value = item.production[1];
-		$("contact").value = item.contact[1];
-		$("cPhone").value = item.cphone[1];
-		$("mixer").value = item.mixer[1];
-		$("mPhone").value = item.mphone[1];
-		$("email").value = item.email[1];
-		$("date").value = item.date[1];
-		$("media").value = item.media[1];
-		$("sampleRates").value = item.select[1];
-		$("track1").value = item.track1[1];
-		$("track2").value = item.track2[1];
-		$("track3").value = item.track3[1];
-		$("track4").value = item.track4[1];
-		$("track5").value = item.track5[1];
-		$("track6").value = item.track6[1];
-		$("track7").value = item.track7[1];
-		$("track8").value = item.track8[1];		
-		$("scene").value = item.scene[1];		
-		$("take").value = item.take[1];		
-		$("notes").value = item.notes[1];
-		$("fader").value = item.fader[1];
+		ge("groups").value = item.groups[1];
+		ge("project").value = item.project[1];
+		ge("production").value = item.production[1];
+		ge("contact").value = item.contact[1];
+		ge("cPhone").value = item.cphone[1];
+		ge("mixer").value = item.mixer[1];
+		ge("mPhone").value = item.mphone[1];
+		ge("email").value = item.email[1];
+		ge("date").value = item.date[1];
+		ge("media").value = item.media[1];
+		ge("sampleRates").value = item.select[1];
+		ge("track1").value = item.track1[1];
+		ge("track2").value = item.track2[1];
+		ge("track3").value = item.track3[1];
+		ge("track4").value = item.track4[1];
+		ge("track5").value = item.track5[1];
+		ge("track6").value = item.track6[1];
+		ge("track7").value = item.track7[1];
+		ge("track8").value = item.track8[1];		
+		ge("scene").value = item.scene[1];		
+		ge("take").value = item.take[1];		
+		ge("notes").value = item.notes[1];
+		ge("fader").value = item.fader[1];
 		var radios = document.forms[0].frame;		
 		for(var i=0; i<radios.length; i++) {
 			if(radios[i].value == "23.97 FPS" && item.radios[1] == "23.97 FPS"){
@@ -186,13 +189,13 @@ window.addEventListener("DOMContentLoaded", function() {
 		}	
 		var box = document.forms[0].reftone
 		if(item.box[1] == "Yes") {
-			$("reftone").setAttribute("checked", "checked");
+			ge("reftone").setAttribute("checked", "checked");
 		}
 //		remove save input initial event listener
 		save.removeEventListener("click", saveData);
 //		change submit button value to edit  to edit
-		$("submit").value = "Edit Report";
-		var editSubmit = $("submit");
+		ge("submit").value = "Edit Report";
+		var editSubmit = ge("submit");
 // 	key value established as property of editSubmit
 // 	so it can be used when data is saveData		
 		editSubmit.addEventListener("click", validate);
@@ -240,15 +243,15 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	}
 	function validate(e){
-		var getGroup = $("groups");
-		var getProject = $("project");
-		var getProduction = $("production");
-		var getContact = $("contact");
-		var getCPhone = $("cPhone");
-		var getMixer = $("mixer");
-		var getEmail = $("email");
-		var getMPhone = $("mPhone");
-		var getDate = $("date");		
+		var getGroup = ge("groups");
+		var getProject = ge("project");
+		var getProduction = ge("production");
+		var getContact = ge("contact");
+		var getCPhone = ge("cPhone");
+		var getMixer = ge("mixer");
+		var getEmail = ge("email");
+		var getMPhone = ge("mPhone");
+		var getDate = ge("date");		
 //		error reset
 		errMsg.innerHTML = "";
 		getGroup.style.border = "1px solid black";
@@ -333,14 +336,14 @@ window.addEventListener("DOMContentLoaded", function() {
 					"News"],
 		frameRate,
 		refTone = "No",
-		errMsg = $("errors");
+		errMsg = ge("errors");
 	makeCats(); 
 //		Links and Submit Button
-	var displayData = $("display");
+	var displayData = ge("display");
 	displayData.addEventListener("click", getData);
-	var clearData = $("clear");
+	var clearData = ge("clear");
 	clearData.addEventListener("click", clearLocal);
-	var save = $("submit");
+	var save = ge("submit");
 	save.addEventListener("click", validate);
 });
 
