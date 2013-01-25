@@ -1,10 +1,7 @@
-/* 
-Michael Frohbeg
-MIU-1301
-1-13-2013
-Week 2 Project
-"iMixer"
-Gold--main.js
+/* Michael Frohberg id 0003262761
+ MDVBS VFW 1212 
+Project 4 - Forms
+iPlayDate - main.js
 */
 window.addEventListener("DOMContentLoaded", function() {
 	function ge(x) {

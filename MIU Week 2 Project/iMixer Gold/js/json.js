@@ -1,11 +1,3 @@
-/* 
-Michael Frohbeg
-MIU-1301
-1-13-2013
-Week 2 Project
-"iMixer"
-gold--json.js
-*/
 var json = {
  "report 1": {
      "groups":			["Project Type:", "Film"],
@@ -87,7 +79,8 @@ var json = {
      "take":         ["Take Number/Name:", "SERIES"],
      "notes":        ["Scene/Take Notes:", "Boring as hell"],
      "fader":        ["Fader Level:", "9"]    
-},
+  }
+}
 "report 4": {
      "groups":			["Project Type:", "TV"],     
      "project":      ["Project Name:", "Project Runway"],
@@ -115,6 +108,7 @@ var json = {
      "notes":        ["Scene/Take Notes:", "Love and Happiness"],
      "fader":        ["Fader Level:", "2"]
  },
+	
 "report 5": {
      "groups":			["Project Type:", "TV"],     
      "project":      ["Project Name:", "Project Runway"],
@@ -546,7 +540,7 @@ var json = {
      "take":         ["Take Number/Name:", "7"],
      "notes":        ["Scene/Take Notes:", "Love and Happiness"],
      "fader":        ["Fader Level:", "2"]
-};
+ },
 	
 	
 	
